@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Neon Snake is a polished classic Snake game prototype, ready for static web deployment."
+    />
+    <meta name="theme-color" content="#0a1022" />
+    <title>Neon Snake</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="background-glow background-glow-a" aria-hidden="true"></div>
+    <div class="background-glow background-glow-b" aria-hidden="true"></div>
+
+    <main class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">Classic Arcade Prototype</p>
+        <h1>Neon Snake</h1>
+        <p class="hero-copy">
+          A focused classic Snake loop with a stronger visual identity, responsive controls, and
+          deployment-ready structure.
+        </p>
+      </header>
+
+      <section class="layout">
+        <article class="game-column">
+          <section class="hud">
+            <article class="stat-card">
+              <p>Score</p>
+              <strong id="score">0</strong>
+            </article>
+            <article class="stat-card">
+              <p>High Score</p>
+              <strong id="high-score">0</strong>
+            </article>
+            <article class="stat-card">
+              <p>Status</p>
+              <strong id="status">Ready</strong>
+            </article>
+          </section>
+
+          <section class="stage">
+            <section id="game-board" class="board" aria-label="Snake board"></section>
+            <div id="overlay" class="overlay" aria-live="polite"></div>
+          </section>
+
+          <section class="control-row">
+            <div class="action-buttons">
+              <button id="start-btn" type="button">Start</button>
+              <button id="pause-btn" type="button">Pause</button>
+              <button id="restart-btn" type="button">Restart</button>
+            </div>
+            <label class="speed-picker" for="speed-select">
+              Speed
+              <select id="speed-select">
+                <option value="180">Chill</option>
+                <option value="140" selected>Classic</option>
+                <option value="100">Rush</option>
+              </select>
+            </label>
+          </section>
+        </article>
+
+        <aside class="info-column">
+          <section class="info-card">
+            <h2>Controls</h2>
+            <p>Keyboard: Arrow keys or WASD</p>
+            <p>Pause/Resume: Space or P</p>
+            <p>Restart: R</p>
+          </section>
+
+          <section class="info-card">
+            <h2>Release Readiness</h2>
+            <p>Static-host friendly structure for GitHub Pages.</p>
+            <p>Deterministic core game logic with tests.</p>
+            <p>Responsive UI with touch controls for mobile play.</p>
+          </section>
+        </aside>
+      </section>
+
+      <section class="touch-panel" aria-label="Touch controls">
+        <button data-direction="UP" type="button">Up</button>
+        <div class="touch-middle-row">
+          <button data-direction="LEFT" type="button">Left</button>
+          <button data-direction="DOWN" type="button">Down</button>
+          <button data-direction="RIGHT" type="button">Right</button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
