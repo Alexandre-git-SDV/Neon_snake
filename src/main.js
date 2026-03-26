@@ -17,7 +17,7 @@ const overlayElement = document.querySelector("#overlay");
 const startButton = document.querySelector("#start-btn");
 const restartButton = document.querySelector("#restart-btn");
 const pauseButton = document.querySelector("#pause-btn");
-const speedSelect = document.querySelector("#speed-select");
+const speedButtons = Array.from(document.querySelectorAll(".speed-button"));
 const directionButtons = Array.from(document.querySelectorAll("[data-direction]"));
 
 let state = createGameState();
@@ -149,6 +149,19 @@ function render() {
   overlayElement.classList.toggle("is-visible", Boolean(overlayMessage));
 }
 
+function setSpeed(value) {
+  const nextSpeed = Number(value);
+  tickMs =
+    Number.isFinite(nextSpeed) && nextSpeed >= 70 && nextSpeed <= 300
+      ? nextSpeed
+      : DEFAULT_TICK_MS;
+
+  speedButtons.forEach((button) => {
+    const buttonSpeed = Number(button.dataset.speed);
+    button.classList.toggle("is-active", buttonSpeed === tickMs);
+  });
+}
+
 function resetGame(autostart = false) {
   state = restartGame(state);
   hasStarted = autostart;
@@ -259,14 +272,16 @@ pauseButton.addEventListener("click", () => {
   pauseOrResume();
 });
 
-speedSelect.addEventListener("change", () => {
-  const value = Number(speedSelect.value);
-  tickMs = Number.isFinite(value) && value >= 70 && value <= 300 ? value : DEFAULT_TICK_MS;
+speedButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setSpeed(button.dataset.speed);
+  });
 });
 
 window.addEventListener("keydown", onKeyDown);
 
 buildGrid();
+setSpeed(DEFAULT_TICK_MS);
 render();
 
 function loop() {

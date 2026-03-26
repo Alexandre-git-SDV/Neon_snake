@@ -53,14 +53,12 @@
               <button id="pause-btn" type="button">Pause</button>
               <button id="restart-btn" type="button">Restart</button>
             </div>
-            <label class="speed-picker" for="speed-select">
-              Speed
-              <select id="speed-select">
-                <option value="180">Chill</option>
-                <option value="140" selected>Classic</option>
-                <option value="100">Rush</option>
-              </select>
-            </label>
+            <div class="speed-picker" role="group" aria-label="Speed">
+              <span class="speed-label">Speed</span>
+              <button class="speed-button" type="button" data-speed="180">Chill</button>
+              <button class="speed-button is-active" type="button" data-speed="140">Classic</button>
+              <button class="speed-button" type="button" data-speed="100">Rush</button>
+            </div>
           </section>
         </article>
 

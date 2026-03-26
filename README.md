@@ -19,6 +19,7 @@ Then open `http://127.0.0.1:5173`.
 - Start/Resume: `Enter` or `Start` button
 - Restart: `R` or `Restart` button
 - Touch: On-screen directional buttons (mobile)
+- Speed: Chill / Classic / Rush buttons
 
 ## Deploy on GitHub Pages
 
@@ -28,7 +29,8 @@ Then open `http://127.0.0.1:5173`.
 
 ## Full-version readiness
 
-- Deterministic game engine with test coverage (`src/snake-logic.js`, `src/snake-logic.test.js`).
+- Deterministic game engine with test coverage (`src/snake-logic.js`, `tests/snake-logic.test.js`).
+- Tests live in `tests/` for cleaner deployment output.
 - Responsive UI and mobile touch controls.
 - Local high-score persistence via `localStorage`.
 - Deployment workflow for continuous publishing.

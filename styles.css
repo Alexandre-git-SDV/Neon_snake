@@ -240,12 +240,30 @@ button:disabled {
 .speed-picker {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+}
+
+.speed-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-right: 0.25rem;
+}
+
+.speed-button {
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(139, 176, 255, 0.35);
+  background: rgba(12, 20, 40, 0.9);
   color: var(--text-muted);
 }
 
-.speed-picker select {
-  min-width: 98px;
+.speed-button.is-active {
+  color: var(--text-main);
+  border-color: rgba(34, 211, 238, 0.8);
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.18);
+  background: linear-gradient(145deg, rgba(34, 211, 238, 0.2), rgba(16, 185, 129, 0.2));
 }
 
 .info-column {

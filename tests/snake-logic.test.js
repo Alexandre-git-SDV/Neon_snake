@@ -6,7 +6,7 @@ import {
   setNextDirection,
   spawnFood,
   stepGame
-} from "./snake-logic.js";
+} from "../src/snake-logic.js";
 
 test("moves snake one cell in current direction", () => {
   const state = createGameState({
