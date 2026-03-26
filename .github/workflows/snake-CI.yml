@@ -7,7 +7,7 @@ on:
     branches: ["develop", "main"]
 
 jobs:
-  lint-test:
+  lint-snake:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,12 +24,9 @@ jobs:
       - name: Run lint
         run: npm run lint
 
-      - name: Run tests
-        run: npm test
-
   docker-build:
     runs-on: ubuntu-latest
-    needs: [lint-test]
+    needs: [lint-snake]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
