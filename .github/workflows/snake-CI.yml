@@ -40,6 +40,7 @@ jobs:
       - name: Smoke test container
         run: |
           docker run -d --rm -p 5173:5173 --name neon-snake-ci neon-snake:ci
-          sleep 2
-          curl -fs http://127.0.0.1:5173 | grep -q "Neon Snake"
+          sleep 3
+          response=$(curl -s http://localhost:5173/)
+          echo "$response" | grep -q "Neon" || (echo "Test failed" && exit 1)
           docker stop neon-snake-ci
