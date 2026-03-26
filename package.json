@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
+    "lint": "node --check server.mjs src/main.js src/snake-logic.js",
     "test": "node --test --test-isolation=none"
   }
 }

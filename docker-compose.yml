@@ -1,0 +1,10 @@
+services:
+  neon-snake:
+    build: .
+    image: neon-snake:latest
+    ports:
+      - "5173:5173"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 5173
+    restart: unless-stopped

@@ -2,8 +2,8 @@ import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
 
-const PORT = 5173;
-const HOST = "127.0.0.1";
+const PORT = Number(process.env.PORT) || 5173;
+const HOST = process.env.HOST || "0.0.0.0";
 const ROOT = process.cwd();
 
 const CONTENT_TYPES = {

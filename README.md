@@ -5,7 +5,7 @@ Classic Snake gameplay with an original arcade-style interface, responsive contr
 ## Run locally
 
 ```powershell
-cd "C:\Users\Alexandre GOURAUD\Documents\CODEX DEV"
+cd "./Neon_snake"
 npm.cmd test
 node server.mjs
 ```
