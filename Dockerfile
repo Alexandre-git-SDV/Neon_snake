@@ -2,7 +2,9 @@ FROM node:20-alpine
 
 WORKDIR /Neon_snake
 
-COPY package.json ./
+COPY package.json package-lock.json ./
+RUN npm ci
+
 COPY server.mjs ./
 COPY src ./src
 COPY index.html ./
